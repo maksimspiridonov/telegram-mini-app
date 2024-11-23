@@ -4,13 +4,21 @@ const tg = window.Telegram.WebApp;
 // Убедимся, что приложение готово перед редиректом
 tg.ready();
 
-// URL партнера
-const partnerUrl = "https://1warlo.top/casino/list/4?p=6fgw";
+// Промокод, который будет скопирован
+const promoCode = "6fgw";
 
-// Функция для редиректа на сайт партнера
-function redirectToPartner() {
-    tg.openLink(partnerUrl); // Используем Telegram API для открытия ссылки
+// URL партнера
+const partnerUrl = "https://1warlo.top/casino/list/4?p=" + promoCode;
+
+// Функция для копирования промокода
+function copyPromoCode() {
+    navigator.clipboard.writeText(promoCode).then(() => {
+        // После успешного копирования перенаправляем на сайт партнера
+        tg.openLink(partnerUrl);
+    }).catch(err => {
+        console.error("Failed to copy promo code: ", err);
+    });
 }
 
-// Автоматическое перенаправление сразу после инициализации
-setTimeout(redirectToPartner, 1000);
+// Добавляем обработчик для кнопки
+document.getElementById("copyButton").addEventListener("click", copyPromoCode);
