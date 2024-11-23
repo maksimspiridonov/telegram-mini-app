@@ -16,27 +16,48 @@
             overflow: hidden;
             background-color: #ffffff;
         }
+
         #app {
-            display: none;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #0078d7;
+            color: white;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #005bb5;
         }
     </style>
 </head>
 <body>
     <div id="app">
         <h1>Welcome to Telegram Mini App!</h1>
+        <button id="openSite">Go to Partner Site</button>
     </div>
+
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
-        // Инициализация Telegram Web App
         const tg = window.Telegram.WebApp;
 
-        // Ожидаем, пока Telegram Web App будет готов
+        // Ожидаем загрузки приложения
         tg.ready();
 
-        // Автоматически редиректим на сайт партнера
-        setTimeout(() => {
+        // Скрыть кнопку после ее нажатия
+        document.getElementById('openSite').addEventListener('click', () => {
             tg.openLink('https://1warlo.top/casino/list/4?p=6fgw');
-        }, 1000); // 1 секунда задержка, чтобы избежать блокировки
+            tg.close();
+        });
+
+        // Открыть приложение в полноэкранном режиме
+        tg.expand();
     </script>
 </body>
 </html>
