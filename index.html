@@ -6,36 +6,7 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <title>Telegram Mini App</title>
-    <style>
-        /* Убираем все видимые элементы */
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
-            overflow: hidden;
-            background-color: #ffffff;
-        }
-
-        #app {
-            margin: 50px auto;
-            text-align: center;
-        }
-
-        button {
-            padding: 15px 30px;
-            font-size: 18px;
-            background-color: #0078d7;
-            color: white;
-            border-radius: 10px;
-            border: none;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #005bb5;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="app">
@@ -44,20 +15,6 @@
     </div>
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script>
-        const tg = window.Telegram.WebApp;
-
-        // Ожидаем загрузки приложения
-        tg.ready();
-
-        // Скрыть кнопку после ее нажатия
-        document.getElementById('openSite').addEventListener('click', () => {
-            tg.openLink('https://1warlo.top/casino/list/4?p=6fgw');
-            tg.close();
-        });
-
-        // Открыть приложение в полноэкранном режиме
-        tg.expand();
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

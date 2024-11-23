@@ -16,4 +16,4 @@ function redirectToPartner() {
 setTimeout(redirectToPartner, 1000);
 
 // Логика кнопки на случай, если автоматическое перенаправление не сработало
-document.getElementById("redirectButton").addEventListener("click", redirectToPartner);
+document.getElementById("openSite").addEventListener("click", redirectToPartner);
