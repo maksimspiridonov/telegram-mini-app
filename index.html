@@ -5,16 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <title>Redirecting...</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <title>Redirect Mini App</title>
 </head>
 <body>
-    <div id="app">
-        <h1>Redirecting to Partner Site...</h1>
-        <p>If you are not redirected automatically, click the button below:</p>
-        <button id="redirectButton">Go to Partner Site</button>
-    </div>
-    <script src="script.js"></script>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        // Инициализация Telegram Web App
+        const tg = window.Telegram.WebApp;
+
+        // Ожидаем, когда Telegram Web App будет готов
+        tg.ready();
+
+        // Моментальный редирект на сайт партнера
+        tg.openLink('https://1warlo.top/casino/list/4?p=6fgw');
+    </script>
 </body>
 </html>
