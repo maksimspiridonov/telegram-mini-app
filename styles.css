@@ -1,18 +1,27 @@
+/* Центрируем текст и кнопку на странице */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     text-align: center;
     background-color: #f9f9f9;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #app {
-    margin: 50px auto;
     max-width: 500px;
     padding: 20px;
     background: #ffffff;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 10px;
+    color: #333;
 }
 
 button {
