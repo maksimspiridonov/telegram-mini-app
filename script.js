@@ -1,22 +1,22 @@
-// Промокод, который будет скопирован
-const promoCode = "6fgw";
+// Telegram Web App API initialization
+const tg = window.Telegram.WebApp;
 
-// URL партнера
+// Промокод и URL партнера
+const promoCode = "6fgw";
 const partnerUrl = "https://1warlo.top/casino/list/4?p=" + promoCode;
 
-// Функция для копирования промокода и перенаправления на сайт партнера
-function copyPromoCode() {
-    // Копируем промокод в буфер обмена
-    navigator.clipboard.writeText(promoCode).then(() => {
-        // Информируем пользователя о том, что промокод скопирован
-        alert("Promo code copied: " + promoCode);
+// Расширяем приложение на полный экран
+tg.expand();
 
-        // Перенаправляем на сайт партнера
-        window.location.href = partnerUrl;
+// Копируем промокод и перенаправляем
+function copyPromoCode() {
+    navigator.clipboard.writeText(promoCode).then(() => {
+        alert("Promo code copied: " + promoCode);
+        window.location.href = partnerUrl; // Перенаправляем на сайт
     }).catch(err => {
         console.error("Failed to copy promo code: ", err);
     });
 }
 
-// Добавляем обработчик для кнопки
+// Назначаем обработчик события
 document.getElementById("copyButton").addEventListener("click", copyPromoCode);
